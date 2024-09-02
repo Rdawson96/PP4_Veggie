@@ -101,6 +101,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 LOGIN_URL = 'login'
 
+LOGIN_REDIRECT_URL = 'booking'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
