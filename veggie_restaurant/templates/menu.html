@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Restaurant Booking</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index_stylesheet.css' %}">
 </head>
 <body>
     <h1>Menu</h1>
@@ -14,7 +16,6 @@
     </nav>
     <div class="menu-container">
         <aside class="menu-sidebar">
-            <h2>Menu</h2>
             <ul>
                 <li><a href="#starters">Starters</a></li>
                 <li><a href="#mains">Mains</a></li>
