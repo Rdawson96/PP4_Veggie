@@ -1,131 +1,94 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Green Harvest Bistro
 
-Welcome Rob Dawson,
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
+-  [User Experience](#user-experience)
+    - [Project Goals](#project-goals)
+    - [User Stories](#user-stories)
+    - [Colours Used](#colours-used)
+    - [Fonts used](#fonts-used)
+    - [Wireframes](#wireframes)
+  - [Features](#features)
+    - [General Features](#general-features)
+    - [Database Design](#database-design) 
+  - [Frameworks and Programs Used](#frameworks-and-programs-used)
+    - [Languages used](#languages-used)
+  - [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+      - [Validation Errors](#validation-errors)
+    - [Accessibility](#accessibility)
+      - [1. Lighthouse testing](#1-lighthouse-testing)
+      - [2. Semantic HTML](#2-semantic-html)
+      - [3. ARIA (Accessible Rich Internet Applications)](#3-aria-accessible-rich-internet-applications)
+      - [4. Contrast and Readability](#4-contrast-and-readability)
+      - [5. Alt Text for Images](#5-alt-text-for-images)
+      - [6. Responsive Design](#6-responsive-design)
+    - [Manual testing](#manual-testing)
+      - [Browser Compatibility](#browser-compatibility)
+  - [Bugs](#bugs)
+  - [Finished Product](#finished-product)
+  - [Deployment](#deployment)
+    - [Github](#github)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Code](#code)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
+## Project Goals
+The goal of this project is to create an engaging and user-friendly online platform for a vegetarian restaurant, Green Harvest Bistro. The site aims to provide a seamless experience for users looking to explore the restaurant's menu, make reservations, and learn more about the restaurant's philosophy. Additionally, the project focuses on delivering a visually appealing design that reflects the restaurant's commitment to fresh, sustainable, and healthy eating.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Stories
+As a first-time visitor, I want to easily navigate the website, so that I can quickly find the menu and learn more about the restaurant.
+As a returning customer, I want to log in and view my past reservations, so that I can easily manage my bookings.
+As a health-conscious diner, I want to explore a variety of vegetarian and vegan dishes, so that I can choose a meal that fits my dietary preferences.
+As a user interested in booking a table, I want to easily find and use the booking form, so that I can reserve a table quickly.
+As a site owner, I want to manage reservations and view customer feedback, so that I can improve the dining experience.
 
-`python3 -m http.server`
+## Colours Used
+The color scheme of the site was carefully chosen to reflect the natural and organic theme of Green Harvest Bistro. The primary colors used are:
 
-A blue button should appear to click: _Make Public_,
+Green (#4CAF50): Represents nature, health, and sustainability. It is used for headings, buttons, and highlights.
+White (#FFFFFF): Provides a clean and minimal background, making content easy to read.
+Dark Green (#2c5f2d): Used for text and menu links, creating a contrast with the white background.
+Light Gray (#f4f4f4): Used as a subtle background color for sections and forms, adding depth without overwhelming the user.
 
-Another blue button should appear to click: _Open Browser_.
+## Fonts Used
+The typography of the website was selected to enhance readability and maintain a professional yet inviting look. The primary fonts used are:
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+Arial: A clean and widely supported sans-serif font, chosen for its simplicity and readability across all devices.
+Sans-serif: Used as the fallback font to ensure consistency in case Arial is not available.
+These fonts were selected to provide a modern and approachable feel, aligning with the brand's identity of being fresh, natural, and accessible.
 
-A blue button should appear to click: _Make Public_,
+## Database Design
 
-Another blue button should appear to click: _Open Browser_.
+### Booking Model
+The Booking model captures all the necessary details related to a reservation at the Green Harvest Bistro. This model includes the following fields:
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+user (ForeignKey): A reference to the User model, representing the user who made the booking. This field creates a one-to-many relationship, where a user can have multiple bookings.
 
-To log into the Heroku toolbelt CLI:
+name (CharField): Stores the name of the person making the booking. This is a required field, with a maximum length of 100 characters.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+email (EmailField): Contains the email address of the person making the booking. It ensures that a valid email format is used.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+phone_number (CharField): Holds the phone number of the person making the booking. This is a required field, typically used for contact purposes.
 
-### Connecting your Mongo database
+date (DateField): The date for which the booking is made. This field is essential for scheduling the reservation.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+time (TimeField): The time for the booking, ensuring that the restaurant can manage reservations effectively throughout the day.
 
-------
+number_of_guests (IntegerField): Represents the number of guests included in the booking. This helps the restaurant prepare for the right number of customers.
 
-## Release History
+special_requests (TextField, optional): An optional field where users can specify any special requests or preferences for their booking, such as dietary restrictions or seating preferences.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+created_at (DateTimeField, auto_now_add=True): Automatically records the date and time when the booking was created. This helps in tracking and managing bookings over time.
 
-**June 18, 2024,** Add Mongo back into template
+### Functionality of the Booking Model
+User Authentication: The model is tied to the User model, meaning that only authenticated users can make and view bookings. This ensures that the booking process is secure and personalized.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+Form Handling: Forms in the website are linked to this model to handle the input of booking data. The data is validated, saved to the database, and then displayed to the user as a confirmation.
 
-**May 28 2024:** Fix Mongo and Links installs
+Querying and Display: The model's data is used to display a list of bookings to the user, showing details such as the date, time, and number of guests. It also allows users to review and manage their reservations.
 
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+This model was designed to be simple yet powerful enough to handle all the necessary aspects of the booking process, ensuring a smooth experience for both the users and the restaurant staff.
