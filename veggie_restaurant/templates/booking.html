@@ -14,5 +14,55 @@
         <a href="{% url 'menu' %}">Menu</a>
         <a href="{% url 'booking' %}">Booking</a>
     </nav>
+    <main class="booking-container">
+        <h2>Book a Table</h2>
+        
+        {% if user.is_authenticated %}
+            <section class="user-bookings">
+                <h3>Your Bookings</h3>
+                {% for booking in user.bookings.all %}
+                    <div class="booking-item">
+                        <p><strong>Date:</strong> {{ booking.date }}</p>
+                        <p><strong>Time:</strong> {{ booking.time }}</p>
+                        <p><strong>Guests:</strong> {{ booking.number_of_guests }}</p>
+                        <p><strong>Special Requests:</strong> {{ booking.special_requests }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        <form method="post" class="booking-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="number_of_guests">Number of Guests:</label>
+                <input type="number" id="number_of_guests" name="number_of_guests" required>
+            </div>
+            <div class="form-group">
+                <label for="special_requests">Special Requests:</label>
+                <textarea id="special_requests" name="special_requests"></textarea>
+            </div>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </main>
 </body>
 </html>

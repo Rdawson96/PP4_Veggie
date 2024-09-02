@@ -92,6 +92,9 @@ button:hover, .button:hover {
     nav {
         padding: 1rem; 
         text-align: left; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
     nav a {
