@@ -6,6 +6,8 @@
     <title>Logout - Green Harvest Bistro</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index_stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_signup_stylesheet.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="header"><h1>Green Harvest Bistro</h1></div>
@@ -14,25 +16,32 @@
         <a href="{% url 'home' %}" class="button">Return to Home</a>
     </div>
 </body>
-<div class="footer-social">
-    <h3>Connect with Us</h3>
-    <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="{% static 'icons/facebook.png' %}" alt="Facebook">
-        </a>
-        <a href="https://www.twitter.com" target="_blank">
-            <img src="{% static 'icons/twitter.png' %}" alt="Twitter">
-        </a>
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="{% static 'icons/instagram.png' %}" alt="Instagram">
-        </a>
-        <a href="https://www.linkedin.com" target="_blank">
-            <img src="{% static 'icons/linkedin.png' %}" alt="LinkedIn">
-        </a>
+<div class="footer-container">
+    <div class="footer-location">
+        <h3>Location</h3>
+        <p>123 Green Street, Leeds, LS1 1AB, UK</p>
+        <a href="https://www.google.com/maps" target="_blank">Find us on Google Maps</a>
     </div>
-</div>
+
+    <div class="footer-social">
+        <h3>Connect with Us</h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <i class="fa-brands fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+            </a>
+        </div>
+    </div>
 <div class="footer-bottom">
-<p>&copy; 2024 Green Harvest Bistro. All Rights Reserved.</p>
+    <p>&copy; 2024 Green Harvest Bistro. All Rights Reserved.</p>
 </div>
 </div>
 </html>

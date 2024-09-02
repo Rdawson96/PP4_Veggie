@@ -8,7 +8,6 @@
     - [User Stories](#user-stories)
     - [Colours Used](#colours-used)
     - [Fonts used](#fonts-used)
-    - [Wireframes](#wireframes)
   - [Features](#features)
     - [General Features](#general-features)
     - [Database Design](#database-design) 
@@ -24,12 +23,9 @@
   - [Bugs](#bugs)
   - [Finished Product](#finished-product)
   - [Deployment](#deployment)
-    - [Github](#github)
-  - [Credits](#credits)
-    - [Content](#content)
-    - [Media](#media)
-    - [Code](#code)
 
+
+Please find the link to my heroku site [here](https://veggie-restaurant-pp4-ce120585246e.herokuapp.com/)
 
 ## Project Goals
 The goal of this project is to create an engaging and user-friendly online platform for a vegetarian restaurant, Green Harvest Bistro. The site aims to provide a seamless experience for users looking to explore the restaurant's menu, make reservations, and learn more about the restaurant's philosophy. Additionally, the project focuses on delivering a visually appealing design that reflects the restaurant's commitment to fresh, sustainable, and healthy eating.
@@ -114,8 +110,6 @@ The Booking model captures all the necessary details related to a reservation at
 
 ## Manual Testing
 
-## Manual Testing
-
 | **Test Case**                        | **Action**                                              | **Expected Result**                                      | **Actual Result**                                        | **Status** |
 |--------------------------------------|---------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|------------|
 | **Home Page Load**                   | Navigate to the home page.                              | The home page should load without errors.                 | Home page loads correctly without errors.                 | Pass       |
@@ -144,3 +138,13 @@ What I Tried:
 
 I made sure that all the necessary packages in requirements.txt, like gunicorn, Django, and whitenoise, were installed correctly.
 Static Files Setup: I spent a lot of time configuring static files with WhiteNoise, thinking that might be the issue. But even after doing that, the error
+
+## Finished Product
+
+Please find the link to my heroku site [here](https://veggie-restaurant-pp4-ce120585246e.herokuapp.com/)
+
+## credits
+
+- [W3Schools](https://www.w3schools.com/) was referenced throughout the project.
+- [Stack overflow](https://stackoverflow.com/) was referenced throughout the project.
+- For README.md file, reference from my first project was considered.

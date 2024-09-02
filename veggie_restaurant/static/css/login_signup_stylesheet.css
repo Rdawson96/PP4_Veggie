@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.form-container a {
+    color: #FF9800;
+}
+
 h1 {
     margin-bottom: 20px;
     color: #2c5f2d;
