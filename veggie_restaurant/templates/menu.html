@@ -6,9 +6,10 @@
     <title>Home - Restaurant Booking</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index_stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu_stylesheet.css' %}">
 </head>
 <body>
-    <h1>Menu</h1>
+    <heading class="header"><h1>Menu</h1></heading>
     <nav>
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'menu' %}">Menu</a>
@@ -16,6 +17,7 @@
     </nav>
     <div class="menu-container">
         <aside class="menu-sidebar">
+            <h3>Jump to:</h3>
             <ul>
                 <li><a href="#starters">Starters</a></li>
                 <li><a href="#mains">Mains</a></li>
