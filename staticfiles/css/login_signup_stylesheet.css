@@ -1,0 +1,92 @@
+* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; 
+    max-width: 400px; 
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c5f2d;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #2c5f2d;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    body {
+        justify-content: flex-start; /* Align form to the top left on larger screens */
+        align-items: flex-start;
+        padding: 20px;
+        height: auto;
+    }
+
+    .form-container {
+        width: 400px; /* Fixed width on larger screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Larger heading on bigger screens */
+    }
+
+    button {
+        font-size: 18px; /* Slightly larger button text */
+    }
+}
