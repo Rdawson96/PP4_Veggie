@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Restaurant Booking</title>
+    <title>Green Harvest Bistro</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index_stylesheet.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="header"><h1>Green Harvest Bistro</h1></div>
@@ -20,8 +21,13 @@
         {% endif %}
     </nav>
 
-    <div>
-        <p>At Green Garden Bistro, we believe in celebrating the vibrant flavors of nature. 
+    <div class="content">
+        <h3>About Us</h3>
+            <p>Green Harvest Bistro is dedicated to offering the freshest vegetarian and plant-based cuisine 
+                in the heart of Leeds. We believe in the power of fresh, local ingredients and aim to provide a warm, 
+                inviting atmosphere for all our guests.</p>
+        <p>   
+            At Green Garden Bistro, we believe in celebrating the vibrant flavors of nature. 
             Nestled in the heart of Leeds, our restaurant offers a delightful array of vegetarian 
             and plant-based dishes that are as nourishing as they are delicious. 
             Whether you're a dedicated vegetarian or simply looking to explore a healthier, 
@@ -31,24 +37,18 @@
             perfect place to enjoy a meal with family and friends. Join us for a culinary experience that’s rooted in 
             nature and brimming with creativity. Come discover why we're the go-to spot for conscious eaters who refuse to compromise on taste. 
         </p>
-    </div>
-
-    <div class="content">
         <h2>Book a Table Online</h2>
         {% if not user.is_authenticated %}
-            <p>To book a table, you need an account. Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'signup' %}">sign up</a>.</p>
+            <p>To book a table, you need an account. Please 
+                <a href="{% url 'login' %}">login</a> 
+                or 
+                <a href="{% url 'signup' %}">sign up</a>.</p>
         {% else %}
             <p>Welcome back, {{ user.username }}! You can now <a href="{% url 'booking' %}">book a table</a> or view your current bookings.</p>
         {% endif %}
     </div>
 </body>
 <div class="footer-container">
-    <div class="footer-content">
-        <div class="footer-about">
-            <h3>About Us</h3>
-            <p>Green Harvest Bistro is dedicated to offering the freshest vegetarian and plant-based cuisine in the heart of Leeds. We believe in the power of fresh, local ingredients and aim to provide a warm, inviting atmosphere for all our guests.</p>
-        </div>
-
         <div class="footer-location">
             <h3>Location</h3>
             <p>123 Green Street, Leeds, LS1 1AB, UK</p>
@@ -59,16 +59,16 @@
             <h3>Connect with Us</h3>
             <div class="social-icons">
                 <a href="https://www.facebook.com" target="_blank">
-                    <img src="{% static 'icons/facebook.png' %}" alt="Facebook">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
                 </a>
                 <a href="https://www.twitter.com" target="_blank">
-                    <img src="{% static 'icons/twitter.png' %}" alt="Twitter">
+                    <i class="fa-brands fa-twitter fa-2x"></i>
                 </a>
                 <a href="https://www.instagram.com" target="_blank">
-                    <img src="{% static 'icons/instagram.png' %}" alt="Instagram">
+                    <i class="fa-brands fa-instagram fa-2x"></i>
                 </a>
                 <a href="https://www.linkedin.com" target="_blank">
-                    <img src="{% static 'icons/linkedin.png' %}" alt="LinkedIn">
+                    <i class="fa-brands fa-linkedin fa-2x"></i>
                 </a>
             </div>
         </div>
