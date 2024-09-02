@@ -18,14 +18,9 @@
     - [Validator Testing](#validator-testing)
       - [Validation Errors](#validation-errors)
     - [Accessibility](#accessibility)
-      - [1. Lighthouse testing](#1-lighthouse-testing)
-      - [2. Semantic HTML](#2-semantic-html)
-      - [3. ARIA (Accessible Rich Internet Applications)](#3-aria-accessible-rich-internet-applications)
-      - [4. Contrast and Readability](#4-contrast-and-readability)
-      - [5. Alt Text for Images](#5-alt-text-for-images)
-      - [6. Responsive Design](#6-responsive-design)
+      - [1. Semantic HTML](#2-semantic-html)
+      - [2. Responsive Design](#6-responsive-design)
     - [Manual testing](#manual-testing)
-      - [Browser Compatibility](#browser-compatibility)
   - [Bugs](#bugs)
   - [Finished Product](#finished-product)
   - [Deployment](#deployment)
@@ -90,29 +85,62 @@ These descriptions highlight the key features of each page on your rest
 ### Booking Model
 The Booking model captures all the necessary details related to a reservation at the Green Harvest Bistro. This model includes the following fields:
 
-user (ForeignKey): A reference to the User model, representing the user who made the booking. This field creates a one-to-many relationship, where a user can have multiple bookings.
+- user (ForeignKey): A reference to the User model, representing the user who made the booking. This field creates a one-to-many relationship, where a user can have multiple bookings.
 
-name (CharField): Stores the name of the person making the booking. This is a required field, with a maximum length of 100 characters.
+- name (CharField): Stores the name of the person making the booking. This is a required field, with a maximum length of 100 characters.
 
-email (EmailField): Contains the email address of the person making the booking. It ensures that a valid email format is used.
+- email (EmailField): Contains the email address of the person making the booking. It ensures that a valid email format is used.
 
-phone_number (CharField): Holds the phone number of the person making the booking. This is a required field, typically used for contact purposes.
+- phone_number (CharField): Holds the phone number of the person making the booking. This is a required field, typically used for contact purposes.
 
-date (DateField): The date for which the booking is made. This field is essential for scheduling the reservation.
+- date (DateField): The date for which the booking is made. This field is essential for scheduling the reservation.
 
-time (TimeField): The time for the booking, ensuring that the restaurant can manage reservations effectively throughout the day.
+- time (TimeField): The time for the booking, ensuring that the restaurant can manage reservations effectively throughout the day.
 
-number_of_guests (IntegerField): Represents the number of guests included in the booking. This helps the restaurant prepare for the right number of customers.
+- number_of_guests (IntegerField): Represents the number of guests included in the booking. This helps the restaurant prepare for the right number of customers.
 
-special_requests (TextField, optional): An optional field where users can specify any special requests or preferences for their booking, such as dietary restrictions or seating preferences.
+- special_requests (TextField, optional): An optional field where users can specify any special requests or preferences for their booking, such as dietary restrictions or seating preferences.
 
-created_at (DateTimeField, auto_now_add=True): Automatically records the date and time when the booking was created. This helps in tracking and managing bookings over time.
+- created_at (DateTimeField, auto_now_add=True): Automatically records the date and time when the booking was created. This helps in tracking and managing bookings over time.
 
 ### Functionality of the Booking Model
-User Authentication: The model is tied to the User model, meaning that only authenticated users can make and view bookings. This ensures that the booking process is secure and personalized.
+- User Authentication: The model is tied to the User model, meaning that only authenticated users can make and view bookings. This ensures that the booking process is secure and personalized.
 
-Form Handling: Forms in the website are linked to this model to handle the input of booking data. The data is validated, saved to the database, and then displayed to the user as a confirmation.
+- Form Handling: Forms in the website are linked to this model to handle the input of booking data. The data is validated, saved to the database, and then displayed to the user as a confirmation.
 
-Querying and Display: The model's data is used to display a list of bookings to the user, showing details such as the date, time, and number of guests. It also allows users to review and manage their reservations.
+- Querying and Display: The model's data is used to display a list of bookings to the user, showing details such as the date, time, and number of guests. It also allows users to review and manage their reservations.
 
-This model was designed to be simple yet powerful enough to handle all the necessary aspects of the booking process, ensuring a smooth experience for both the users and the restaurant staff.
+- This model was designed to be simple yet powerful enough to handle all the necessary aspects of the booking process, ensuring a smooth experience for both the users and the restaurant staff.
+
+## Manual Testing
+
+## Manual Testing
+
+| **Test Case**                        | **Action**                                              | **Expected Result**                                      | **Actual Result**                                        | **Status** |
+|--------------------------------------|---------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|------------|
+| **Home Page Load**                   | Navigate to the home page.                              | The home page should load without errors.                 | Home page loads correctly without errors.                 | Pass       |
+| **Navigation Bar Links**             | Click on each navigation link (Home, Menu, Booking).    | Each link should take the user to the correct page.       | All links direct the user to the correct page.            | Pass       |
+| **User Sign Up**                     | Fill in the sign-up form with valid data and submit.    | User should be redirected to the login page.              | User redirected to login page as expected.                | Pass       |
+| **User Login**                       | Log in with valid credentials.                          | User should be redirected to the booking page.            | User redirected to the booking page as expected.          | Pass       |
+| **Booking a Table**                  | Fill in the booking form with valid data and submit.    | Booking should be saved and displayed in the bookings list.| Booking saved and displayed correctly in the list.       | Pass       |
+| **Logout Functionality**             | Click the logout link.                                  | User should be logged out and redirected to the home page.| User logged out and redirected to home page.              | Pass       |
+| **Access Booking Page (Unauthenticated)** | Try to access the booking page without logging in.      | User should be redirected to the login page.              | User redirected to login page as expected.                | Pass       |
+| **Invalid Login Attempt**            | Attempt to log in with incorrect credentials.           | User should see an error message and remain on the login page. | Error message displayed, user remains on login page.   | Pass       |
+| **Form Validation (Sign Up)**        | Submit the sign-up form with missing or invalid data.   | Form should not submit, and relevant error messages should display. | Form does not submit, error messages displayed. | Pass       |
+| **Form Validation (Booking)**        | Submit the booking form with missing or invalid data.   | Form should not submit, and relevant error messages should display. | Form does not submit, error messages displayed. | Pass       |
+
+
+## Bugs
+
+One of the biggest challenges I faced during this project was the recurring Server Error 500. This error, which generally means something went wrong on the server, became a major headache. Even after carefully going through my code, checking configurations, and verifying all dependencies, I couldn’t quite pin down the exact cause of the problem.
+
+- What Happened:
+
+The error kept showing up whenever I tried to access the home page after deploying the project on Heroku.
+The logs from Heroku hinted that something was off, but they didn’t give me enough details to figure out what exactly was wrong.
+What I Tried:
+
+- Checking Dependencies: 
+
+I made sure that all the necessary packages in requirements.txt, like gunicorn, Django, and whitenoise, were installed correctly.
+Static Files Setup: I spent a lot of time configuring static files with WhiteNoise, thinking that might be the issue. But even after doing that, the error
