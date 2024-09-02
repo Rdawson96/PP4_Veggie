@@ -27,9 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ee_8sd#n36st4#271^txwu83si36!6vj@$_*s9u#mygb-46_69'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-rdawson96-pp4veggie-txw863l8690.ws-eu115.gitpod.io'
+                ,'https://veggie-restaurant-pp4-ce120585246e.herokuapp.com/'
+                ,'veggie-restaurant-pp4.herokuapp.com'
                 ,'.herokuapp.com']
 
 
@@ -95,8 +97,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-rdawson96-pp4veggie-txw863l8690.ws-eu115.gitpod.io",
     "https://*.herokuapp.com",
 ]
-
-STATIC_URL = '/static/'
 
 LOGIN_URL = 'login'
 
