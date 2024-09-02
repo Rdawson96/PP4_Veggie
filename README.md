@@ -61,6 +61,30 @@ Arial: A clean and widely supported sans-serif font, chosen for its simplicity a
 Sans-serif: Used as the fallback font to ensure consistency in case Arial is not available.
 These fonts were selected to provide a modern and approachable feel, aligning with the brand's identity of being fresh, natural, and accessible.
 
+## General Features
+
+### Home Page
+Overview: The home page provides a welcoming introduction to Green Harvest Bistro, highlighting the restaurant's focus on vegetarian and plant-based cuisine.
+Navigation Links: The page includes easy-to-use navigation links to other sections of the site, such as the Menu, Booking page, and Login/Signup pages.
+Call to Action: Encourages users to explore the menu or make a reservation if they are logged in. If not logged in, prompts users to sign up or log in to access booking features.
+### Menu Page
+Detailed Menu Display: This page features a comprehensive list of the restaurant's dishes, organized by category (e.g., starters, mains, desserts).
+Special Dietary Information: The menu highlights dishes that cater to specific dietary requirements, such as vegan or gluten-free options.
+### Booking Page
+User Bookings Section: Logged-in users can view their current and past bookings, including details like date, time, number of guests, and any special requests.
+Booking Form: Allows users to make a new reservation by filling out a form with their details, including date, time, and number of guests. The form is only accessible to logged-in users.
+### Login Page
+User Login: Provides a form for existing users to log in to their accounts.
+Redirects: After successful login, users are redirected to the booking page or their previous location.
+### Signup Page
+New User Registration: Allows new users to create an account by providing a username, email, and password.
+Post-Registration Redirect: After signing up, users are automatically logged in and redirected to the booking page.
+### Logout Page
+Confirmation: Informs users that they have successfully logged out.
+Navigation: Includes a link or button to return to the home page.
+These descriptions highlight the key features of each page on your rest
+
+
 ## Database Design
 
 ### Booking Model
