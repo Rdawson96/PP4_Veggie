@@ -75,6 +75,15 @@ Confirmation: Informs users that they have successfully logged out.
 Navigation: Includes a link or button to return to the home page.
 These descriptions highlight the key features of each page on your rest
 
+### Frameworks and Programs used
+
+- [Git](https://git-scm.com)  
+   Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.  
+- [GitHub](https://github.com)  
+   GitHub was used to store the projects code after being pushed from Git. 
+- [Heroku](https://www.heroku.com)   
+   Heroku was used to deploy the website.  
+
 
 ## Database Design
 
@@ -107,6 +116,8 @@ The Booking model captures all the necessary details related to a reservation at
 - Querying and Display: The model's data is used to display a list of bookings to the user, showing details such as the date, time, and number of guests. It also allows users to review and manage their reservations.
 
 - This model was designed to be simple yet powerful enough to handle all the necessary aspects of the booking process, ensuring a smooth experience for both the users and the restaurant staff.
+
+
 
 ## Manual Testing
 
